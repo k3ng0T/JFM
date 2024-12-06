@@ -1,0 +1,258 @@
+/* Общий стиль профиля */
+.profile-container {
+    top:0;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    min-height: 90vh; /* Увеличим минимальную высоту контейнера */
+    background: #f0f0f5;
+    padding-top: 20px;  /* Добавим немного отступа сверху */
+}
+
+.profile-card {
+    margin-left: 10px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;  /* Увеличим padding для большего пространства */
+    text-align: center;
+    width: 350px;  /* Увеличим ширину карточки */
+    position: relative;
+    transition: transform 0.3s;
+}
+.buttons-container {
+  flex-direction: column;
+  margin-left: 10px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;  /* Увеличим padding для большего пространства */
+  text-align: center;
+  width: 350px;  /* Увеличим ширину карточки */
+  position: relative;
+  transition: transform 0.3s;
+}
+.profile-card {
+  display: flex;
+  flex-direction: column; /* Упорядочиваем элементы по вертикали */
+  justify-content: space-between; /* Оставляем пространство между элементами */
+  height: 100%; /* Делаем карточку растягиваемой */
+  position: relative;
+}
+
+.buttons-container {
+  margin-top: auto; /* Перемещаем кнопки в нижнюю часть карточки */
+  text-align: center;
+}
+
+.account-btn-wrapper {
+  display: flex;
+  flex-direction: column; /* Кнопки располагаются вертикально */
+  gap: 10px; /* Расстояние между кнопками */
+  align-items: center;
+}
+.profile-card:hover {
+    transform: translateY(-5px);
+}
+.buttons-container:hover {
+  transform: translateY(-5px);
+}
+
+.profile-photo img {
+    width: 120px;  /* Увеличим размер изображения */
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.profile-photo img:hover {
+    transform: scale(1.1);
+}
+
+.profile-name h2 {
+    font-size: 1.8em;  /* Увеличим размер шрифта для имени */
+    margin: 15px 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+.profile-details p {
+    margin: 12px 0;  /* Увеличим отступ между элементами */
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: color 0.3s;
+    color: #555;
+}
+
+.profile-details p:hover {
+    color: #3498db;
+}
+
+/* Модальное окно */
+dialog {
+    display: block;
+    z-index: 9999;
+    width: 350px;  /* Увеличим ширину модального окна */
+    padding: 30px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, pointer-events 0.3s ease;
+}
+
+dialog[open] {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.dialog-content {
+    opacity: 1;
+    text-align: center;
+}
+
+.dialog-content h2 {
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.dialog-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dialog-content button {
+    margin-top: 10px;
+    padding: 12px 25px;
+    font-size: 16px;
+    
+    background-image: linear-gradient(135deg, #5F2A5F, #9A3B9A, #FF4B4B);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-image 0.3s;
+}
+
+.dialog-content button:hover {
+
+  background: linear-gradient(135deg, #5F2A5F, #FF7070, #FF4B4B);
+}
+
+.close-dialog {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.close-dialog:hover {
+    background: #e53935;
+}
+
+
+
+
+
+
+
+
+  
+
+.buttons-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .account-btn-wrapper {
+    left:-6%;
+    position: relative;
+    display: inline-block;
+    margin: 15px auto;
+  }
+  
+  .connect-btn, .disconnect-btn {
+    display: inline-block;
+    height: 50px; /* Устанавливаем одинаковую высоту */
+    padding: 0 15px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    line-height: 50px; /* Выравнивание текста по вертикали */
+    position: relative;
+  }
+  
+  .connect-btn.google {
+    background-color: #4285f4;
+    color: white;
+    width: 250px; /* Ширина кнопки подключения */
+  }
+  
+  .connect-btn.apple {
+    background-color: #333;
+    color: white;
+    width: 250px;
+  }
+  
+  .connect-btn.facebook {
+    background-color: #3b5998;
+    color: white;
+    width: 250px;
+  }
+  
+
+  
+  /* Кнопка для отвязки */
+  .disconnect-btn {
+    top:0;
+    right: -20%;
+    position: absolute;
+    background-color: #e7e7e7;
+    color: #333;
+    border: 1px solid #ccc;
+    width: 50px; /* Одинаковая ширина */
+    height: 50px; /* Одинаковая высота */
+    font-size: 24px; /* Размер иконки */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0%; /* Убираем округленность */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .disconnect-btn:hover {
+    background-color: #ccc;
+    color: white;
+  }
+  
+  .connect-btn:hover {
+    opacity: 0.8;
+  }
+  
+  .connect-btn i {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+  
+  .disconnect-btn i {
+    font-size: 24px;
+  }
